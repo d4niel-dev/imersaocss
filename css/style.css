@@ -1,7 +1,6 @@
 body {
-  background-image: url('https://wallpapercave.com/wp/wp5502890.jpg');
+  background-image: url('https://wallpapertag.com/wallpaper/full/7/5/8/394034-dark-background-images-2560x1600-for-android-40.jpg');
   background-size: auto 100vh;
-  color: white;
   font-family: monospace;
   height: 100vh;
 }
@@ -20,12 +19,10 @@ body {
 }
 
 a {
-  color: purple;
   text-decoration: none;
 }
 
-.site-title,
-.site-subtitle {
+.site-title, .site-subtitle {
   color: whitesmoke;
   text-align: center;
 }
