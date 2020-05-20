@@ -1,12 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-image: url('https://wallpapertag.com/wallpaper/full/7/5/8/394034-dark-background-images-2560x1600-for-android-40.jpg');
+  background-image: url("../image/fundo.jpg");
   background-size: auto 100vh;
+  color: whitesmoke;
   font-family: monospace;
   height: 100vh;
 }
 
+header {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
 .menu {
-  background-color: white;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 .menu ul {
@@ -18,15 +35,30 @@ body {
   list-style: none;
 }
 
-a {
+.menu a {
+  display: block;
+  padding: 10px 20px;
   text-decoration: none;
+  color: whitesmoke;
+}
+
+.menu a:hover {
+  background-color: whitesmoke;
+  color: black;
 }
 
 .site-title, .site-subtitle {
-  color: whitesmoke;
   text-align: center;
 }
 
 .site-subtitle {
   font-style: italic;
+}
+section {
+  background-color: #171717;
+}
+
+.img-portifolio {
+  filter: saturate(15%);
+  width: 180px;
 }
