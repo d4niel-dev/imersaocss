@@ -11,13 +11,13 @@ body {
 header {
   align-items: center;
   display: flex;
-  height: 90vh;
+  height: 100vh;
   justify-content: center;
 }
 
 .menu {
   position: fixed;
-  background-color: #0c0c0c;
+  background-color: rgb(12, 12, 12, 20);
   margin-right: 10px;
   padding: 15px;
   top: 0;
@@ -28,6 +28,7 @@ header {
 .menu ul {
   display: flex;
   justify-content: space-around;
+  margin-right: 30px;
 }
 
 .menu li {
@@ -42,12 +43,13 @@ header {
   font-size: 12px;
   padding: 10px 20px;
   text-decoration: none;
-  transition: 0.8s;
+  transition: 0.5s;
 }
 
+.menu a:active,
 .menu a:hover {
-  background-color: whitesmoke;
-  color: black;
+  border-bottom: 1px solid white;
+  transform: scaleX(2em);
 }
 
 .site-title, .site-subtitle {
@@ -60,14 +62,49 @@ header {
   margin-bottom: 20px;
 }
 
+.site-title {
+  opacity: 0;
+
+  animation: 1s linear 0.5s animacaotitulo forwards;
+}
+
+@keyframes animacaotitulo{
+  from {
+    opacity: 0;
+    transform: translatex(-20px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+
+}
+
 .site-subtitle {
   font-style: italic;
+  opacity: 0;
+  animation: 1s linear 0.5s animacaosubtitulo forwards;
+}
+
+@keyframes animacaosubtitulo{
+  from {
+    opacity: 0;
+    transform: translatex(20px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+
 }
 
 .secao-2 {
   background-color: #171717;
   padding: 60px 0px;
   text-align: center;
+  min-height: 100vh;
 }
 
 .contato h2,
@@ -98,6 +135,8 @@ figure:hover  {
 
 .img-portifolio {
   filter: saturate(15%);
+  height: 210px;
+  width: 350px;
 }
 
 figcaption {
@@ -107,10 +146,23 @@ figcaption {
 
 .contato {
   background-color: #131313;
-  height: 60vh;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.contato .grid-contato {
+  display: grid;
+  grid-template-columns: repeat(3, 2.5em);
+}
+
+.contato a {
+  color: white;
+  font-size: 2.5em;
+  text-decoration: none;
 }
 
 footer {
+  background-color: #151515;
   height: 10vh;
 }
 
