@@ -1,12 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   background-image: url("../image/fundo.jpg");
-  background-size: auto 100vh;
+  background-size: 100vw 100vh;
+  background-repeat: repeat-y;
   color: whitesmoke;
   font-family: monospace;
   height: 100vh;
@@ -15,14 +11,17 @@ body {
 header {
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
 }
 
 .menu {
-  background-color: black;
   position: fixed;
+  background-color: #0c0c0c;
+  margin-right: 10px;
+  padding: 15px;
   top: 0;
+  z-index: 2;
   width: 100vw;
 }
 
@@ -33,13 +32,17 @@ header {
 
 .menu li {
   list-style: none;
+  margin-left: 10px;
 }
 
 .menu a {
   display: block;
+  color: whitesmoke;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
   padding: 10px 20px;
   text-decoration: none;
-  color: whitesmoke;
+  transition: 0.8s;
 }
 
 .menu a:hover {
@@ -48,17 +51,85 @@ header {
 }
 
 .site-title, .site-subtitle {
+  font-family: 'Raleway', sans-serif;
   text-align: center;
+}
+
+.site-title {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .site-subtitle {
   font-style: italic;
 }
-section {
+
+.secao-2 {
   background-color: #171717;
+  padding: 60px 0px;
+  text-align: center;
+}
+
+.contato h2,
+.secao-2 h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  padding: 50px 0px;
+  text-transform: uppercase;
+  margin: 0px auto;
+  width: 200px;
+}
+
+.secao-2 .figuras {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 350px;
+  justify-content: center;
+}
+
+figure {
+  box-shadow: 0px 0px 12px #101010;
+  transition: 0.8s;
+}
+
+figure:hover  {
+  transform: translateY(-2px);
 }
 
 .img-portifolio {
   filter: saturate(15%);
-  width: 180px;
+}
+
+figcaption {
+  font-size: 16px;
+  padding: 30px;
+}
+
+.contato {
+  background-color: #131313;
+  height: 60vh;
+}
+
+footer {
+  height: 10vh;
+}
+
+@media (min-width:750px) {
+  
+  .menu ul {
+    justify-content: flex-end;
+  }
+
+  .site-title {
+    font-size: 3em;
+  }
+
+  .secao-2 .figuras {
+    grid-template-columns: repeat(2, 350px);
+  }
+
+  .img-portifolio {
+    width: 100%;
+    height: 210px;
+  }
 }
