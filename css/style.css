@@ -8,6 +8,10 @@ body {
   height: 100vh;
 }
 
+.container {
+  padding: 2em;
+}
+
 header {
   align-items: center;
   display: flex;
@@ -16,6 +20,7 @@ header {
 }
 
 .menu {
+  box-shadow: 0 10px 10px -2px black;
   position: fixed;
   background-color: rgb(12, 12, 12, 20);
   top: 0;
@@ -35,7 +40,6 @@ header {
 }
 
 .menu a {
-  border-width: 0;
   display: block;
   color: whitesmoke;
   font-family: 'Raleway', sans-serif;
@@ -83,6 +87,7 @@ header {
 
 .site-subtitle {
   font-style: italic;
+  font-size: 1em;
   opacity: 0;
   animation: 2s linear 1s animacaosubtitulo forwards;
 }
@@ -100,44 +105,52 @@ header {
 
 }
 
-.sobre,
-.servicos,
-.contato {
-  background-color: #171717;
-  min-height: 60vh;
-  text-align: center;
-}
-
-.sobre h2,
-.servicos h3,
-.contato h2,
-.portifolio h2 {
+h3, h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
-  padding: 50px 0px;
   text-transform: uppercase;
   margin: 0px auto;
   width: 200px;
 }
 
+.sobre,
+.servicos,
+.contato {
+  background-color: #171717;
+  min-height: 60vh;
+  padding: 4em;
+  text-align: center;
+}
+
 .sobre p {
-  width: 1000px;
-  text-align: justify;
-  margin-bottom: 2em;
-  text-indent: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 2em 2em 2em;
+  text-align: center;
+  text-indent: 1em;
 }
 
 .image-sobre {
   clip-path: circle(50% at 50% 50%);
-  float: left;
   filter: contrast(98%);
-  margin: 0 1em 1em 1em;
+  margin: 1em 2em;
   opacity: 10%;
 }
 
-.portifolio {
+.sobre h2 {
+  padding: 1em 0;
+}
+
+.sobre span {
+  font-size: 12px;
+}
+
+.servicos {
   background-color: #131313;
-  padding: 4em;
+}
+
+.portifolio {
+  background-color: #111111;
 }
 
 .portifolio .grid-galeria {
@@ -148,8 +161,8 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 30vh 30vh 30vh;
-  grid-template-areas: "a 2 3"
-                       "a 5 c"
+  grid-template-areas: "a d d"
+                       "a e c"
                        "b b c";
   gap: 5px;
 
@@ -164,27 +177,6 @@ header {
   filter: brightness(80%);
 }
 
-.grid-galeria .box:hover figcaption {
-  position: absolute;
-  left: 10px;
-  bottom: 15px;
-  opacity: 100%;
-  transition: 1.8s;
-  transform: translateY(0);
-}
-
-figcaption {
-  backface-visibility: hidden;
-  opacity: 0%;
-  transform: translateY(10px);
-}
-
-
-.grid-galeria .a {
-  background-color: brown;
-  grid-area: a;
-}
-
 .image {
   width: 100%;
   height: 100%;
@@ -195,9 +187,37 @@ figcaption {
   object-position: center;
 }
 
+figcaption {
+  backface-visibility: hidden;
+  opacity: 0%;
+  transform: translateY(10px);
+}
+
+.grid-galeria .box:hover figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  opacity: 100%;
+  transition: 1.8s;
+  transform: translateY(0);
+}
+
+.grid-galeria .a {
+  background-color: brown;
+  grid-area: a;
+}
+
+.grid-galeria .b {
+  grid-area: d;
+}
+
 .grid-galeria .e {
   background-color: chocolate;
   grid-area: c;
+}
+
+.grid-galeria .d {
+  grid-area: e;
 }
 
 .grid-galeria .h {
@@ -225,7 +245,7 @@ footer {
   height: 10vh;
 }
 
-@media (min-width:750px) {
+@media screen and (min-width:750px) {
   
   .menu ul {
     justify-content: flex-end;
@@ -235,12 +255,20 @@ footer {
     font-size: 3em;
   }
 
+  .sobre p {
+    width: 508px;
+    text-align: justify;
+  }
+
+  .portifolio {
+   padding: 4em;
+  }
+
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
   .container {
-    max-width: 1200px;
-    padding: 2em;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
   }
