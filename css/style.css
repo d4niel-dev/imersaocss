@@ -100,15 +100,13 @@ header {
 
 }
 
-.secao-2 {
-  background-color: #171717;
-  padding: 60px 0px;
-  text-align: center;
-  min-height: 100vh;
+.portifolio {
+  background-color: #131313;
+  padding: 2em;
 }
 
 .contato h2,
-.secao-2 h2 {
+.portifolio h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
   padding: 50px 0px;
@@ -117,35 +115,59 @@ header {
   width: 200px;
 }
 
-.secao-2 .figuras {
+.portifolio .grid-galeria {
+  width: 100%;
+
+  min-height: calc(100vh - 8em - 48px);
+
   display: grid;
-  gap: 2em;
-  grid-template-columns: 350px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30vh 30vh 30vh;
+  grid-template-areas: "a 2 3"
+                       "a 5 c"
+                       "b b c";
+  gap: 5px;
+
   justify-content: center;
 }
 
-figure {
-  box-shadow: 0px 0px 12px #101010;
-  transition: 0.8s;
+.grid-galeria > div:hover {
+  filter: blur(1px) brightness(0.9);
+  transition: 0.5s;
 }
 
-figure:hover  {
-  transform: translateY(-2px);
+
+.grid-galeria .a {
+  background-color: brown;
+  grid-area: a;
 }
 
-.img-portifolio {
-  filter: saturate(15%);
-  height: 210px;
-  width: 350px;
+.image {
+  width: 100%;
+  height: 100%;
+
+  filter: blur(2px), brightness(20);
+
+  object-fit: cover;
+  object-position: center;
 }
 
-figcaption {
-  font-size: 16px;
-  padding: 30px;
+.grid-galeria .e {
+  background-color: chocolate;
+  grid-area: c;
+}
+
+.grid-galeria .h {
+  background-color: cadetblue;
+  grid-area: b;
+}
+
+.h .image {
+  object-position: bottom;
 }
 
 .contato {
-  background-color: #131313;
+  background-color: #171717;
   min-height: 60vh;
   text-align: center;
 }
@@ -176,12 +198,4 @@ footer {
     font-size: 3em;
   }
 
-  .secao-2 .figuras {
-    grid-template-columns: repeat(2, 350px);
-  }
-
-  .img-portifolio {
-    width: 100%;
-    height: 210px;
-  }
 }
