@@ -4,7 +4,7 @@ body {
   background-size: 100vw 100vh;
   background-repeat: repeat-y;
   color: whitesmoke;
-  font-family: monospace;
+  font-family: 'Noto Sans KR', sans-serif;
   height: 100vh;
 }
 
@@ -18,8 +18,6 @@ header {
 .menu {
   position: fixed;
   background-color: rgb(12, 12, 12, 20);
-  margin-right: 10px;
-  padding: 15px;
   top: 0;
   z-index: 2;
   width: 100vw;
@@ -37,6 +35,7 @@ header {
 }
 
 .menu a {
+  border-width: 0;
   display: block;
   color: whitesmoke;
   font-family: 'Raleway', sans-serif;
@@ -48,6 +47,7 @@ header {
 
 .menu a:active,
 .menu a:hover {
+  border-width: 50px;
   border-bottom: 1px solid white;
   transform: scaleX(2em);
 }
@@ -65,7 +65,7 @@ header {
 .site-title {
   opacity: 0;
 
-  animation: 1s linear 0.5s animacaotitulo forwards;
+  animation: 2s linear 1s animacaotitulo forwards;
 }
 
 @keyframes animacaotitulo{
@@ -84,7 +84,7 @@ header {
 .site-subtitle {
   font-style: italic;
   opacity: 0;
-  animation: 1s linear 0.5s animacaosubtitulo forwards;
+  animation: 2s linear 1s animacaosubtitulo forwards;
 }
 
 @keyframes animacaosubtitulo{
@@ -100,11 +100,16 @@ header {
 
 }
 
-.portifolio {
-  background-color: #131313;
-  padding: 2em;
+.sobre,
+.servicos,
+.contato {
+  background-color: #171717;
+  min-height: 60vh;
+  text-align: center;
 }
 
+.sobre h2,
+.servicos h3,
 .contato h2,
 .portifolio h2 {
   font-family: 'Raleway', sans-serif;
@@ -113,6 +118,26 @@ header {
   text-transform: uppercase;
   margin: 0px auto;
   width: 200px;
+}
+
+.sobre p {
+  width: 1000px;
+  text-align: justify;
+  margin-bottom: 2em;
+  text-indent: 2em;
+}
+
+.image-sobre {
+  clip-path: circle(50% at 50% 50%);
+  float: left;
+  filter: contrast(98%);
+  margin: 0 1em 1em 1em;
+  opacity: 10%;
+}
+
+.portifolio {
+  background-color: #131313;
+  padding: 4em;
 }
 
 .portifolio .grid-galeria {
@@ -131,9 +156,27 @@ header {
   justify-content: center;
 }
 
-.grid-galeria > div:hover {
-  filter: blur(1px) brightness(0.9);
-  transition: 0.5s;
+.grid-galeria .box {
+  transition: 1s;
+}
+
+.grid-galeria .box:hover {
+  filter: brightness(80%);
+}
+
+.grid-galeria .box:hover figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  opacity: 100%;
+  transition: 1.8s;
+  transform: translateY(0);
+}
+
+figcaption {
+  backface-visibility: hidden;
+  opacity: 0%;
+  transform: translateY(10px);
 }
 
 
@@ -146,7 +189,7 @@ header {
   width: 100%;
   height: 100%;
 
-  filter: blur(2px), brightness(20);
+  filter: saturate(40%);
 
   object-fit: cover;
   object-position: center;
@@ -164,12 +207,6 @@ header {
 
 .h .image {
   object-position: bottom;
-}
-
-.contato {
-  background-color: #171717;
-  min-height: 60vh;
-  text-align: center;
 }
 
 .contato .grid-contato {
@@ -198,4 +235,13 @@ footer {
     font-size: 3em;
   }
 
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
